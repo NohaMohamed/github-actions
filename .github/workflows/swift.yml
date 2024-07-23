@@ -4,19 +4,20 @@
 name: Swift CI
 
 on:
-    push:
+  push:
     branches: [ "main" ]
-    pull_request:
+  pull_request:
     branches: [ "main" ]
 
 jobs:
-    build_project:
+  build_project:
     runs-on: macos-latest
     steps:
-        - name: Force Xcode 11
+      - name: Force Xcode 11
         run: sudo xcode-select -switch /Applications/Xcode_11.3.app
-        - name: Checkout repository
+      
+      - name: Checkout repository
         uses: actions/checkout@v2
         
-        - name: Build and Test
-        run: xcodebuild test -project UnitTestGithub.xcodeproj -scheme UnitTestGithub -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 13' test
+      - name: Build and Test
+        run: xcodebuild test -project UnitTestGithub.xcodeproj -scheme UnitTestGithub -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 13'
