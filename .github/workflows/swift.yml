@@ -13,9 +13,6 @@ jobs:
   build_project:
     runs-on: macos-latest
     steps:
-      - name: Force Xcode 15
-        run: sudo xcode-select -switch /Downloads/Xcode.app
-      
       - name: Checkout repository
         uses: actions/checkout@v2
         
