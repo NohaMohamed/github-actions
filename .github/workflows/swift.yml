@@ -18,4 +18,4 @@ jobs:
 
       - name: Build and Test
         run: |
-          xcodebuild -workspace UnitTestGithub/UnitTestGithub.xcworkspace -scheme UnitTestGithubTests -destination 'platform=iOS Simulator,name=iPhone 15' test -allowProvisioningUpdates
+          xcodebuild -workspace UnitTestGithub.xcworkspace -scheme UnitTestGithubTests -destination 'platform=iOS Simulator,name=iPhone 15' test -allowProvisioningUpdates
