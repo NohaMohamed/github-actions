@@ -14,7 +14,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         
-      - name: Build and Test
-        run: xcodebuild test -project UnitTestGithub.xcodeproj -scheme UnitTestGithub
+      - name: Build
+        run: swift build
+      - name: tests
+        run: swift test
