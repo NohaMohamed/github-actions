@@ -10,25 +10,6 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    runs-on: macos-latest
-
-    steps:
-    - uses: actions/checkout@v3  # Ensure this fetches your repository correctly
-    - name: Build
-      run: swift build -v  # Replace with your build command
-
-
-
-name: Swift CI
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
   build_project:
     runs-on: macos-latest
     steps:
