@@ -17,4 +17,4 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Build and Test
-        run: xcodebuild test -project UnitTestGithub.xcodeproj -scheme UnitTestGithub -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 13' test
+        run: xcodebuild -workspace UnitTestGithub.xcodeproj -scheme UnitTestGithub -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 13' test
