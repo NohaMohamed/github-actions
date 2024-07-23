@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
+    - name: Set up Xcode
+        uses: actions/setup-xcode@v2
+        with:
+          xcode-version: '13.0'  # Adjust as necessary
 
       - name: Build and Test
         run: xcodebuild test -project UnitTestGithub.xcodeproj -scheme UnitTestGithub -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 13'
