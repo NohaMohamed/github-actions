@@ -17,6 +17,4 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Build
-        run: swift build
-      - name: tests
-        run: swift test
+        run: exec ./.github/scripts/test_app.sh
