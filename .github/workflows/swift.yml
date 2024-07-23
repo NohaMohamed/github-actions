@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-    - name: Set up Xcode
+      - name: Set up Xcode
         uses: actions/setup-xcode@v2
         with:
           xcode-version: '13.0'  # Adjust as necessary
