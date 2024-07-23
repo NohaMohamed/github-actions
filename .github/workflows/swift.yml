@@ -14,10 +14,27 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v4  # Ensure this fetches your repository correctly
+    - uses: actions/checkout@v3  # Ensure this fetches your repository correctly
     - name: Build
       run: swift build -v  # Replace with your build command
-      working-directory: ./  # Specify the directory where Package.swift is located, if necessary
-    - name: Run tests
-      run: swift test -v  # Replace with your test command
-      working-directory: ./  # Specify the directory where Package.swift is located, if necessary
+
+
+
+name: Swift CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_project:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build and Test
+        run: |
+          xcodebuild -workspace UnitTestGithub/UnitTestGithub.xcworkspace -scheme UnitTestGithubTests -destination 'platform=iOS Simulator,name=iPhone 15' test -allowProvisioningUpdates
