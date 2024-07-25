@@ -22,7 +22,8 @@ jobs:
     - name: Create and boot iOS Simulator
       run: |
         SIMULATOR_NAME="TestSim"
-        SIMULATOR_ID=$(xcrun simctl create $SIMULATOR_NAME com.apple.CoreSimulator.SimDeviceType.iPhone-12 com.apple.CoreSimulator.SimRuntime.iOS-16-2)
+        RUNTIME="com.apple.CoreSimulator.SimRuntime.iOS-16-4" # Replace with a valid runtime
+        SIMULATOR_ID=$(xcrun simctl create $SIMULATOR_NAME com.apple.CoreSimulator.SimDeviceType.iPhone-12 $RUNTIME)
         xcrun simctl boot $SIMULATOR_ID
         echo "Sim ID: $SIMULATOR_ID"
 
